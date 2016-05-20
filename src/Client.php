@@ -46,6 +46,15 @@ class Client
 
         $this->close();
     }
+	
+	/**
+	 * Client is connected to server
+	 * 
+	 * @return boolean
+	 */
+	public function isConnected() {
+		return $this->isConnected;
+	}
 
     /**
      * Connects to the websocket

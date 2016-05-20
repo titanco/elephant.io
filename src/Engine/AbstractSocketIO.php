@@ -201,6 +201,16 @@ abstract class AbstractSocketIO implements EngineInterface
                                  'query'  => []
                                 ], $parsed);
 
+		// Change ws to http
+		if ($server['scheme'] === 'ws') {
+			$server['scheme'] = 'http';
+		}
+		
+		// Change wss to https
+		if ($server['scheme'] === 'wss') {
+			$server['scheme'] = 'https';
+		}
+		
         if (!isset($server['port'])) {
             $server['port'] = 'https' === $server['scheme'] ? 443 : 80;
         }
