@@ -48,7 +48,7 @@ class Decoder extends AbstractPayload implements Countable
         if (3 > $length) {
             return;
         }
-
+		
         $payload = array_map('ord', str_split($this->payload));
 
         $this->fin = ($payload[0] >> 0b111);
